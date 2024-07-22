@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta property="telegram:webapp" content="true">
+    <meta property="telegram:webapp_url" content="https://t.me/CiaoBellahelper_bot/CiaoBella">
+    <title>CiaoBella - Order Pizza</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+       .menu-category {
+            margin-bottom: 20px;
+        }
+       .menu-item {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+       .menu-item:hover {
+            background-color: #f0f0f0;
+        }
+       .cart {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: right;
+        }
+       .cart-btn {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+       .cart-btn:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <h1>CiaoBella - Order Pizza</h1>
+    <div class="menu">
+        <div class="menu-category">
+            <h2>ХотДог</h2>
+            <div class="menu-item" data-type="hotdog" data-name="Хот Дог с сосиской" data-price="250">Хот Дог с сосиской (250 руб.)</div>
+            <div class="menu-item" data-type="hotdog" data-name="Хот дог с бананом" data-price="300">Хот дог с бананом (300 руб.)</div>
+        </div>
+        <div class="menu-category">
+            <h2>Добавки</h2>
+            <div class="menu-item" data-type="additive" data-name="Шампиньоны" data-price="70">Шампиньоны (70 руб.)</div>
+            <div class="menu-item" data-type="additive" data-name="Чесночный соус" data-price="70">Чесночный соус (70 руб.)</div>
+            <div class="menu-item" data-type="additive" data-name="Черри" data-price="70">Черри (70 руб.)</div>
+            <div class="menu-item" data-type="additive" data-name="Курица" data-price="70">Курица (70 руб.)</div>
+            <div class="menu-item" data-type="additive" data-name="Сыр пармезан" data-price="70">Сыр пармезан (70 руб.)</div>
+            <div class="menu-item" data-type="additive" data-name="Сыр моцарелла" data-price="70">Сыр моцарелла (70 руб.)</div>
+            <div class="menu-item" data-type="additive" data-name="Соус сырный" data-price="70">Соус сырный (70 руб.)</div>
+            <div class="menu-item" data-type="additive" data-name="Соус BBQ" data-price="70">Соус BBQ (70 руб.)</div>
+            <div class="menu-item" data-type="additive" data-name="Сосиски" data-price="80">Сосиски (80 руб.)</div>
+            <div class="menu-item" data-type="additive" data-name="Ветчина" data-price="70">Ветчина (70 руб.)</div>
+        </div>
+        <div class="menu-category">
+            <h2>Пицца</h2>
+            <div class="menu-item" data-type="pizza" data-name="С шпинатом" data-price="600">С шпинатом (600 руб.)</div>
+            <div class="menu-item" data-type="pizza" data-name="С креветками" data-price="650">С креветками (650 руб.)</div>
+            <div class="menu-item" data-type="pizza" data-name="С горгонзолой" data-price="480">С горгонзолой (480 руб.)</div>
+            <div class="menu-item" data-type="pizza" data-name="С баклажанами" data-price="650">С баклажанами (650 руб.)</div>
+            <div class="menu-item" data-type="pizza" data-name="Поло Песто" data-price="480">Поло Песто (480 руб.)</div>
+            <div class="menu-item" data-type="pizza" data-name="Пицца фреш" data-price="680">Пицца фреш (680 руб.)</div>
+            <div class="menu-item" data-type="pizza" data-name="Пицца CiaoBella" data-price="650">Пицца CiaoBella (650 руб.)</div>
+            <div class="menu-item" data-type="pizza" data-name="Пепперони с горгонзолой" data-price="680">Пепперони с горгонзолой (680 руб.)</div>
+            <div class="menu-item" data-type="pizza" data-name="Пепперони" data-price="560">Пепперони (560 руб.)</div>
+            <div class="menu-item" data-type="pizza" data-name="Ветчина со страчателлой" data-price="700">Ветчина со страчателлой (700 руб.)</div>
+            <div class="menu-item" data-type="pizza" data-name="Ветчина с грибами" data-price="520">Ветчина с грибами (520 руб.)</div>
+            <div class="menu-item" data-type="pizza" data-name="4 сыра" data-price="520">4 сыра (520 руб.)</div>
+            <div class="menu-item" data-type="pizza" data-name="4 Сезона" data-price="550">4 Сезона (550 руб.)</div>
+            <div class="menu-item" data-type="pizza" data-name="Маргарита" data-price="400">Маргарита (400 руб.)</div>
+            <div class="menu-item" data-type="pizza" data-name="Гавайская" data-price="520">Гавайская (520 руб.)</div>
+            <div class="menu-item" data-type="pizza" data-name="CiaoBella Rossa" data-price="650">CiaoBella Rossa (650 руб.)</div>
+        </div>
+        <div class="menu-category">
+            <h2>Панини</h2>
+            <div class="menu-item" data-type="panini" data-name="Панини с сыром страчателла" data-price="300">Панини с сыром страчателла (300 руб.)</div>
+            <div class="menu-item" data-type="panini" data-name="Панини с ветчиной и rukkoloy" data-price="250">Панини с ветчиной и rukkoloy (250 руб.)</div>
+            <div class="menu-item" data-type="panini" data-name="Панини с баклажанами" data-price="250">Панини с баклажанами (250 руб.)</div>
+            <div class="menu-item" data-type="panini" data-name="Пепперони" data-price="350">Пепперони (350 руб.)</div>
+        </div>
+        <div class="menu-category">
+            <h2>Десерты</h2>
+            <div class="menu-item" data-type="dessert" data-name="Торт фисташка" data-price="300">Торт фисташка (300 руб.)</div>
+            <div class="menu-item" data-type="dessert" data-name="Халопени" data-price="70">Халопени (70 руб.)</div>
+        </div>
+        <div class="menu-category">
+            <h2>Напитки</h2>
+            <div class="menu-item" data-type="drink" data-name="Чай 0,3" data-price="60">Чай 0,3 (60 руб.)</div>
+            <div class="menu-item" data-type="drink" data-name="Морс 0,25" data-price="120">Морс 0,25 (120 руб.)</div>
+            <div class="menu-item" data-type="drink" data-name="Rioba Сок 0,25" data-price="120">Rioba Сок 0,25 (120 руб.)</div>
+            <div class="menu-item" data-type="drink" data-name="Pepsi Cola" data-price="120">Pepsi Cola (120 руб.)</div>
+            <div class="menu-item" data-type="drink" data-name="Добрый 0,33 ж/б" data-price="110">Добрый 0,33 ж/б (110 руб.)</div>
+            <div class="menu-item" data-type="drink" data-name="Молочный коктейль 0,4л" data-price="250">Молочный коктейль 0,4л (250 руб.)</div>
+        </div>
+    </div>
+    <div class="cart">
+        <p>Корзина:</p>
+        <ul id="cart-list"></ul>
+        <p>Итого: <span id="total-price">0</span> руб.</p>
+        <button id="order-btn" class="cart-btn">Оформить заказ</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
